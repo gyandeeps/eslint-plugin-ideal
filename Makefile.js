@@ -9,6 +9,8 @@ var nodeCli = require("shelljs-nodecli");
 var jsTestFiles = find("tests/").filter(fileType("js")).join(" ");
 var nodeModules = "./node_modules/";
 var mocha = nodeModules + "mocha/bin/_mocha ";
+var idealPlugin = require("./index");
+var path = require("path");
 
 /* eslint-enable vars-on-top */
 
@@ -32,9 +34,6 @@ function release(type){
     exec("npm version " + type);
 
     exec("echo Commiting master with tags");
-
-    //exec("git add package.json");
-    //exec("git commit --amend --no-edit");
     exec("git push origin master --tags");
 
     exec("echo Publish on NPM");
@@ -43,11 +42,30 @@ function release(type){
     exec("echo Operation done.");
 }
 
+function exportRuleCheck(){
+    var ruleFiles = find("lib/rules/").filter(fileType("js"));
+    var errors = false;
+    var rules = Object.keys(idealPlugin.rules);
+    var ruleConfig = Object.keys(idealPlugin.rulesConfig);
+
+    errors = ruleFiles.every(function(file){
+        file = path.basename(file).split(".")[0];
+        return rules.indexOf(file) > -1 && ruleConfig.indexOf(file) > -1;
+    });
+
+    if(!errors){
+        exit(1);
+    }
+}
+
 target.test = function(){
     var errors = 0;
     var lastRun;
 
     target.lint();
+
+    echo("Check rule exports");
+    exportRuleCheck();
 
     echo("Running Mocha tests");
     lastRun = nodeCli.exec("istanbul", "cover", " --report lcov --report cobertura", mocha, "-- -t 10000 --reporter landing -c", jsTestFiles);

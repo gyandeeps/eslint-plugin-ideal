@@ -7,9 +7,11 @@
 
 module.exports = {
     rules: {
-        "no-tabs-in-file": require("./lib/rules/no-tabs-in-file")
+        "no-tabs-in-file": require("./lib/rules/no-tabs-in-file"),
+        "vars-with-default": require("./lib/rules/no-tabs-in-file")
     },
     rulesConfig: {
-        "no-tabs-in-file": 2
+        "no-tabs-in-file": 2,
+        "vars-with-default": 2
     }
 };
