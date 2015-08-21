@@ -12,7 +12,7 @@ var RuleTester = require("eslint").RuleTester;
 var ruleTester = new RuleTester();
 var rule = require("../../lib/rules/no-tabs-in-file");
 
-var ERROR_MESSAGE = "File contains tabs.";
+var ERROR_MESSAGE = "Line has tabs.";
 
 ruleTester.run("no-eval", rule, {
     valid: [
@@ -23,7 +23,9 @@ ruleTester.run("no-eval", rule, {
         {
             code: "function test(){\t}",
             errors: [{
-                message: ERROR_MESSAGE
+                message: ERROR_MESSAGE,
+                line: 1,
+                column: 18
             }]
         },
         {
@@ -31,8 +33,27 @@ ruleTester.run("no-eval", rule, {
             "  //\tsdfdsf \n" +
             "}",
             errors: [{
-                message: ERROR_MESSAGE
+                message: ERROR_MESSAGE,
+                line: 2,
+                column: 6
             }]
+        },
+        {
+            code: "function test(){\n" +
+            "  //\tsdfdsf \n" +
+            "\t}",
+            errors: [
+                {
+                    message: ERROR_MESSAGE,
+                    line: 2,
+                    column: 6
+                },
+                {
+                    message: ERROR_MESSAGE,
+                    line: 3,
+                    column: 2
+                }
+            ]
         }
     ]
 });
