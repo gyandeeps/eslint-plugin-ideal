@@ -6,7 +6,7 @@
 
 var RuleTester = require("eslint").RuleTester;
 var ruleTester = new RuleTester();
-var rule = require("../../lib/rules/vars-with-default");
+var rule = require("../../index").rules["vars-with-default"];
 
 ruleTester.run("vars-with-default", rule, {
     valid: [

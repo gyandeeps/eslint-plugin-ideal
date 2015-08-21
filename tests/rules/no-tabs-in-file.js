@@ -10,7 +10,7 @@
 
 var RuleTester = require("eslint").RuleTester;
 var ruleTester = new RuleTester();
-var rule = require("../../lib/rules/no-tabs-in-file");
+var rule = require("../../index").rules["no-tabs-in-file"];
 
 var ERROR_MESSAGE = "Line has tabs.";
 
