@@ -32,7 +32,8 @@
     "major": "node Makefile.js major"
   },
   "files": [
-    "lib"
+    "lib",
+    "index.js"
   ],
   "keywords": [
     "eslintplugin",
