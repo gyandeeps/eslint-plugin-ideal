@@ -14,7 +14,7 @@ var rule = require("../../index").rules["no-tabs-in-file"];
 
 var ERROR_MESSAGE = "Line has tabs.";
 
-ruleTester.run("no-eval", rule, {
+ruleTester.run("no-tabs-in-file", rule, {
     valid: [
         "function test(){\n}"
     ],
