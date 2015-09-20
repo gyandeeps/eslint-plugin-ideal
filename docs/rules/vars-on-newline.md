@@ -13,6 +13,8 @@ var a, b, c;
 
 var a = 2, b;
 
+var a = 2; var b;
+
 let a = 2, c,
     d = 2;
 ```
@@ -26,6 +28,9 @@ var a,
 
 var a = 2,
     b;
+
+var a = 2;
+var b;
 
 let a = 2,
     c,

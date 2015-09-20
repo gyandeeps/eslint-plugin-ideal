@@ -4,7 +4,7 @@
 eslint-plugin-ideal
 ====================
 
-#How to use
+# How to use
 
 ## Install [ESLint](https://www.github.com/eslint/eslint) either locally or globally
 
@@ -70,7 +70,7 @@ Enable all of the rules that you would like to use
 }
 ```
 
-#List of supported rules
+# List of supported rules
 
 * [no-tabs-in-file](docs/rules/no-tabs-in-file.md)
 * [vars-with-default](docs/rules/vars-with-default.md)
