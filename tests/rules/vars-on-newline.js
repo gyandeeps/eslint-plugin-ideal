@@ -10,6 +10,7 @@ var rule = require("../../index").rules["vars-on-newline"];
 
 ruleTester.run("vars-on-newline", rule, {
     valid: [
+        "var a = function(){ \nvar b;\n};",
         "var a = 1,\nb = 1;",
         "var a,\nb;",
         "var a; \nvar b;",
