@@ -12,15 +12,13 @@
     "name": "Gyandeep Singh",
     "email": "gyandeeps@gmail.com"
   },
-  "dependencies": {
-    "eslint": "^1.0.0"
-  },
   "devDependencies": {
     "shelljs-nodecli": "^0.1.1",
-    "shelljs": "^0.5.3",
+    "shelljs": "^0.6.0",
     "eslint-config-ideal": "^1.0.0",
-    "istanbul": "^0.3.18",
-    "mocha": "^2.2.5"
+    "istanbul": "^0.4.1",
+    "mocha": "^2.4.5",
+    "eslint": "^1.10.3"
   },
   "engines": {
     "node": ">=0.10.0"

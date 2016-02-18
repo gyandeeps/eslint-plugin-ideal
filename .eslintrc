@@ -4,6 +4,12 @@
         "mocha": true
     },
     "extends": "eslint-config-ideal",
-    "rules": {},
+    "rules": {
+        "id-length": [2, {
+            "min": 3,
+            "max": 30,
+            "exceptions": []
+        }]
+    },
     "root": true
 }

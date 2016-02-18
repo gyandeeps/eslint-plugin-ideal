@@ -16,6 +16,15 @@ ruleTester.run("vars-with-default", rule, {
             ecmaFeatures: {
                 blockBindings: true
             }
+        },
+        {
+            code: "for(var key in report.keys()) {}"
+        },
+        {
+            code: "for(var key of report.keys()) {}",
+            ecmaFeatures: {
+                forOf: true
+            }
         }
     ],
 
