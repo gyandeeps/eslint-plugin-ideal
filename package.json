@@ -18,7 +18,7 @@
     "eslint-config-ideal": "^1.0.0",
     "istanbul": "^0.4.1",
     "mocha": "^2.4.5",
-    "eslint": "^1.10.3"
+    "eslint": "^6.6.0"
   },
   "engines": {
     "node": ">=0.10.0"
